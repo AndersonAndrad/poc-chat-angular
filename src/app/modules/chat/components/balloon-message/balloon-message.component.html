@@ -1,0 +1,9 @@
+<div class="flex flex-col gap-2 p-3 bg-slate-100 shadow-lg rounded-lg w-fit text-sm"
+  [ngClass]="{'ml-auto': userMessage}">
+  <ng-container [ngTemplateOutlet]="text_message"></ng-container>
+  <span class="ml-auto">{{message?.date | date: 'shortTime'}}</span>
+</div>
+
+<ng-template #text_message>
+  <span>{{message?.payload}}</span>
+</ng-template>

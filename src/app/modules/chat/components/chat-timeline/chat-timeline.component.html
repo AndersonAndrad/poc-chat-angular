@@ -1,0 +1,21 @@
+<div class="flex flex-col h-full">
+  <header class="flex flex-col shadow-lg h-[5%] p-2 justify-center">
+    <p class="font-bold">{{conversation?.title}}</p>
+  </header>
+  <main class="flex flex-grow overflow-y-auto h-1 p-4" #chatTimeline>
+    <div *ngIf="!conversation" class="flex w-full justify-center items-center">
+      <p>Select any chat to send and receive messages. 😁</p>
+    </div>
+
+    <div *ngIf="conversation" class="w-full">
+      <ul>
+        <li *ngFor="let message of conversation?.messages" class="mb-2 w-full p-4">
+          <balloon-chat [message]="message"></balloon-chat>
+        </li>
+      </ul>
+    </div>
+  </main>
+  <footer>
+    <bottom-chat class="bg-transparent" [conversationKey]="conversation?.conversationKey"></bottom-chat>
+  </footer>
+</div>

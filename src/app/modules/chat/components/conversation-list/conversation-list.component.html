@@ -1,0 +1,15 @@
+<div class="p-6 rounded-md border-2 h-full flex flex-col gap-6">
+  <header class="flex flex-col justify-center">
+    <div class="flex items-center justify-between">
+      <span class="font-bold">Chats</span>
+    </div>
+    <div>
+      <input-conversation icon="search" [control]="searchControl"></input-conversation>
+    </div>
+  </header>
+  <ul class="overflow-y-auto flex-grow h-1">
+    <li *ngFor="let conversation of conversationToList" class="mb-1">
+      <chat-conversation [conversation]="conversation"></chat-conversation>
+    </li>
+  </ul>
+</div>
